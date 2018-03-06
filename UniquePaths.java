@@ -1,19 +1,15 @@
 public class Solution {
-    public void rotate(int[][] matrix) {
-        int row = matrix.length;
-        int index = 0;
-        while(index< (row/2)){
-            int[] temp = matrix[index];
-            matrix[index] = matrix[row-index-1];
-            matrix[row-index-1] = temp;
-            index++;
-        }
-         for (int i = 0; i < matrix.length; ++i) {
-            for (int j = i + 1; j < matrix[i].length; ++j){
-                int s= matrix[i][j];
-                matrix[i][j] = matrix[j][i];
-                matrix[j][i] = s;
+    public int uniquePaths(int m, int n) {
+        int[][] dp = new int[m][n];
+        for(int i = m-1; i>= 0; i--){
+            for (int j = n-1; j>= 0; j--){
+                if(i==m-1 || j==n-1){
+                    dp[i][j] = 1;
+                }else{
+                    dp[i][j] = dp[i+1][j]+dp[i][j+1];
+                }
             }
         }
+        return dp[0][0];
     }
 }
