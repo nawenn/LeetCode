@@ -1,9 +1,3 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
-import leetcode.TreeNode;
 
 class Solution {
 	public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
